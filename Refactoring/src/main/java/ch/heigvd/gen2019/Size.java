@@ -36,6 +36,12 @@ public enum Size {
         public String toString() {
             return "XXL";
         }
+    },
+    SIZE_NOT_APPLICABLE {
+        @Override
+        public String toString() {
+            return "Invalid Size";
+        }
     };
 
     public abstract String toString();
