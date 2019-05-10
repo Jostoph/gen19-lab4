@@ -49,6 +49,14 @@ public class OrdersWriterTest {
         assertEquals("{\"orders\": [" + order111Json + "]}", new OrdersWriter(orders).getContents());
     }
 
+    @Test
+    public void OneOrderWithOneProducitNoColor(){
+        order111.AddProduct(new Product("Pot", Color.NO_COLOR, -1, 16.50, "SGD"));
+        String order111Json = JsonOrder111WithProduct("{\"code\": \"Pot\", \"color\": \"no color\", \"price\": 16.5, \"currency\": \"SGD\"}");
+        assertEquals("{\"orders\": [" + order111Json + "]}", new OrdersWriter(orders).getContents());
+
+    }
+
     private String JsonOrder111WithProduct(String productJson) {
         return "{\"id\": 111, \"products\": [" + productJson + "]}";
     }
