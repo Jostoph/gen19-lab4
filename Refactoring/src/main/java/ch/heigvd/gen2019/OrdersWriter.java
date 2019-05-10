@@ -77,6 +77,7 @@ public class OrdersWriter {
     }
 
     private String getColorFor(Product product) {
+        
         return product.getColor().toString();
     }
 }
