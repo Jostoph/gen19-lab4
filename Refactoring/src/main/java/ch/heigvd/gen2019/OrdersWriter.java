@@ -8,11 +8,17 @@ public class OrdersWriter {
     }
 
     public String getContents() {
+        return orders.toString();
+    }
+
+    /*
+    public String getContents() {
         StringBuffer sb = new StringBuffer("{\"orders\": [");
 
         for (int i = 0; i < orders.getOrdersCount(); i++) {
             Order order = orders.getOrder(i);
-            serializeOrder(sb, order);
+            sb.append(order);
+            sb.append(", ");
         }
 
         if (orders.getOrdersCount() > 0) {
@@ -21,7 +27,9 @@ public class OrdersWriter {
 
         return sb.append("]}").toString();
     }
+    */
 
+    /*
     private void serializeOrder(StringBuffer sb, Order order) {
         sb.append("{");
         sb.append("\"id\": ");
@@ -31,7 +39,8 @@ public class OrdersWriter {
         for (int j = 0; j < order.getProductsCount(); j++) {
             Product product = order.getProduct(j);
 
-            serializeProduct(sb, product);
+            sb.append(product);
+            sb.append(", ");
         }
 
         if (order.getProductsCount() > 0) {
@@ -41,7 +50,9 @@ public class OrdersWriter {
         sb.append("]");
         sb.append("}, ");
     }
+    */
 
+    /*
     private void serializeProduct(StringBuffer sb, Product product) {
         sb.append("{");
         sb.append("\"code\": \"");
@@ -64,5 +75,6 @@ public class OrdersWriter {
         sb.append(product.getCurrency());
         sb.append("\"}, ");
     }
+    */
 
 }
