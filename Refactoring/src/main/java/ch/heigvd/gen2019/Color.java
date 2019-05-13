@@ -1,24 +1,9 @@
 package ch.heigvd.gen2019;
 
 public enum Color {
-    BLUE {
-        @Override
-        public String toString() {
-            return "blue";
-        }
-    },
-    RED {
-        @Override
-        public String toString() {
-            return "red";
-        }
-    },
-    YELLOW {
-        @Override
-        public String toString() {
-            return "yellow";
-        }
-    },
+    BLUE,
+    RED,
+    YELLOW,
     NO_COLOR {
         @Override
         public String toString() {
@@ -26,5 +11,7 @@ public enum Color {
         }
     };
 
-    public abstract String toString();
+    public String toString() {
+        return super.name().toLowerCase();
+    }
 }
