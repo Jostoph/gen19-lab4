@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Orders {
-    private List<Order> orders = new ArrayList<Order>();
+    private List<Order> orders = new ArrayList<>();
 
     public void addOrder(Order order) {
         orders.add(order);
@@ -16,5 +16,21 @@ public class Orders {
 
     public Order getOrder(int i) {
         return orders.get(i);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("{\"orders\": [");
+
+        for (Order order : orders) {
+            sb.append(order);
+            sb.append(", ");
+        }
+
+        if (orders.size() > 0) {
+            sb.delete(sb.length() - 2, sb.length());
+        }
+
+        return sb.append("]}").toString();
     }
 }
